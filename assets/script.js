@@ -1,9 +1,8 @@
-// Assignment code here
+// Global variables
+var currentPassword = null;
+var generateBtn = document.querySelector('#generate');
+var copyButton = document.querySelector('#copypassword');
 
-//new comment 
-
-// Get references to the #generate element
-var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
