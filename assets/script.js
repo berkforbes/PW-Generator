@@ -11,7 +11,16 @@ function generatePassword() {
   var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
   var specialCharacters = ["@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+"];
 
-
+    // Array placeholders
+    var resultArray = [];
+    var passwordCharacters = [];
+  
+    // Promt and Confirm variables
+    var characterCount = prompt("Your password must contain between 8-128 characters. How many characters would you like in your password?");
+    var useNumbers = confirm("Would you like your password to contain numbers?");
+    var useUppercase = confirm("Would you like your password to contain uppercase letters?");
+    var useLowercase = confirm("Would you like your password to contain lowercase letters?");
+    var useSpecialCharacters = confirm("Would you like your password to contain special characters?");
 
 }
 
