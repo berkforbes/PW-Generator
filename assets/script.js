@@ -39,31 +39,26 @@ function generatePassword() {
     resultArray = resultArray.concat(specialCharacters);
   }
 
+  // If user answers no to all questions, set it to special characters
+  if (resultArray.length === 0) {
+    resultArray = specialCharacters
+  }
   for (var i = 0; i < characterCount; i++) {
     passwordCharacters.push(resultArray[Math.floor(Math.random() * resultArray.length)]);
   }
 
   return passwordCharacters.join("");
-
-  // If user answers no to all questions, set it to special characters
-  if (resultArray.length === 0) {
-    resultArray = specialCharacters
-  }
-
-
 }
-
-
-
-
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
+  currentPassword = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+  passwordText.value = currentPassword;
 
+  copyButton.removeAttribute("disabled");
+  copyButton.focus();
 }
 
 // Add event listener to generate button
