@@ -43,7 +43,7 @@ function generatePassword() {
   if (resultArray.length === 0) {
     resultArray = specialCharacters
   }
-  
+
   for (var i = 0; i < characterCount; i++) {
     passwordCharacters.push(resultArray[Math.floor(Math.random() * resultArray.length)]);
   }
