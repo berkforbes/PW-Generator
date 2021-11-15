@@ -39,6 +39,12 @@ function generatePassword() {
     resultArray = resultArray.concat(specialCharacters);
   }
 
+  for (var i = 0; i < characterCount; i++) {
+    passwordCharacters.push(resultArray[Math.floor(Math.random() * resultArray.length)]);
+  }
+
+  return passwordCharacters.join("");
+
   // If user answers no to all questions, set it to special characters
   if (resultArray.length === 0) {
     resultArray = specialCharacters
