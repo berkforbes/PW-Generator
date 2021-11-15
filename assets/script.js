@@ -43,6 +43,7 @@ function generatePassword() {
   if (resultArray.length === 0) {
     resultArray = specialCharacters
   }
+  
   for (var i = 0; i < characterCount; i++) {
     passwordCharacters.push(resultArray[Math.floor(Math.random() * resultArray.length)]);
   }
@@ -61,5 +62,12 @@ function writePassword() {
   copyButton.focus();
 }
 
-// Add event listener to generate button
+function copyToClipboard() {
+  navigator.clipboard.writeText(currentPassword)
+  alert("Your password has been copied to the clipboard")
+}
+
+// Add event listener to generate button and copy button
 generateBtn.addEventListener("click", writePassword);
+copyButton.addEventListener("click", copyToClipboard);
+
